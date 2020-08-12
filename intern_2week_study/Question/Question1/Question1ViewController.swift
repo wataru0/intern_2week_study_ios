@@ -26,6 +26,7 @@ final class Question1ViewController: UIViewController {
             // clear warningLabel
             warningLabel.text = ""
         } else {
+            // show attention
             warningLabel.text = "文字を入力してください"
         }
     }

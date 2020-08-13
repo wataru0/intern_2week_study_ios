@@ -11,24 +11,25 @@ final class Question1ViewController: UIViewController {
     var tmpText: String = ""
     
     // process of pushing a addButton
-    @IBAction func pushButton() {
+    @IBAction func pushAddButton() {
         // get textFeild's text
         tmpText = textField.text!
         
-        if tmpText != "" {
-            // clear textFeild
-            textField.text = ""
-            
-            // add textView
-            textView.text += tmpText
-            textView.text += "\n"
-            
-            // clear warningLabel
-            warningLabel.text = ""
-        } else {
-            // show attention
+        guard !textField.text!.isEmpty else {
             warningLabel.text = "文字を入力してください"
+            return
         }
+        
+        // add textView
+        textView.text += textField.text!
+        textView.text += "\n"
+        
+        // clear warningLabel
+        warningLabel.text = ""
+        
+        //clear textFeild
+        textField.text = ""
+        
     }
     
     // process of pushing a clearTextButton
@@ -40,21 +41,13 @@ final class Question1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // clear textView on start-up
+        // clear textView and warninLabel on start-up
         textView.text = ""
-        // background color
-        textView.backgroundColor = .lightGray
-        
-        // clear warningLabel
         warningLabel.text = ""
-        
-        // change size of textViewn
-//        let width = UIScreen.main.bounds.size.width
-//        textView.frame.size = CGSize(width: width, height: 300)
     }
     
     // process of toching non-UI componet
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+       self.view.endEditing(true)
+   }
 }

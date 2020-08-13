@@ -7,14 +7,8 @@ final class Question1ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var warningLabel: UILabel!
     
-    // var to store the textField's text
-    var tmpText: String = ""
-    
     // process of pushing a addButton
     @IBAction func pushAddButton() {
-        // get textFeild's text
-        tmpText = textField.text!
-        
         guard !textField.text!.isEmpty else {
             warningLabel.text = "文字を入力してください"
             return

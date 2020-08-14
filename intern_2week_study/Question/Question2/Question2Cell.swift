@@ -14,5 +14,4 @@ class Question2Cell: UITableViewCell {
         // Nukeで画像読み込み
         Nuke.loadImage(with: imageUrl, into: areaImageView)
     }
-    
 }

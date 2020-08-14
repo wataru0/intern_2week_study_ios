@@ -13,6 +13,10 @@ final class Question2ViewController: UIViewController {
         //  Identifier 設定
         self.tableView.register(UINib(nibName: "Question2Cell", bundle: nil), forCellReuseIdentifier: "question2Cell")
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
 
 extension Question2ViewController: UITableViewDataSource {
@@ -20,6 +24,7 @@ extension Question2ViewController: UITableViewDataSource {
         // TableViewに表示する行数を指定する
         return areaTexts.count
     }
+    
     // セルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Cellの作成
@@ -28,24 +33,18 @@ extension Question2ViewController: UITableViewDataSource {
         }
         //cell.textLabel?.text = areaTexts[indexPath.row]
         
-        let imageUrl: String = "https://placehold.jp/150x150.png"
-        
+        //let imageUrl: String = "https://placehold.jp/150x150.png"
+        let imageUrl: String = "https://j-town.net/images/2017/quote-all/town20170314163320.jpg"
         cell.setCell(cellLabel: areaTexts[indexPath.row], url: imageUrl)
         
         return cell
     }
-    
-    // 画像を取得
-//    func getImage(cellLabel: String) -> String {
-//
-//        return imageUrl
-//    }
 }
 
 extension Question2ViewController: UITableViewDelegate {
     // セルタップしたときの処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alert = UIAlertController(title: areaTexts[indexPath.row], message: "alert", preferredStyle: .alert)
+        let alert = UIAlertController(title: areaTexts[indexPath.row], message: "alert!!", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_ action: UIAlertAction!) -> Void in
             print("ok")
@@ -53,5 +52,23 @@ extension Question2ViewController: UITableViewDelegate {
         
         // Alertを表示
         present(alert, animated: true, completion: nil)
+        // セルをタップしたときのハイライトを消す
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // ヘッダーの大きさ
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+
+    // フッターの大きさ
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    // セルの高さを固定
+    // セルが画面外に出ると，大きさが変化しレイアウトが崩れたため．
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }

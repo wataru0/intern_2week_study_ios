@@ -5,9 +5,6 @@ final class Question2ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    //private let url = URL(String: "https://pixabay.com/api/")
-    private let key = "17880579-7929bd21349a1518f7cd6a827"
-    
     private let areaTexts: [String] = ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県"]
     
     override func viewDidLoad() {
@@ -31,16 +28,30 @@ extension Question2ViewController: UITableViewDataSource {
         }
         //cell.textLabel?.text = areaTexts[indexPath.row]
         
-        guard let imageUrl = URL(string: "https://placehold.jp/150x150.png") else {
-            return Question2Cell()
-        }
+        let imageUrl: String = "https://placehold.jp/150x150.png"
+        
         cell.setCell(cellLabel: areaTexts[indexPath.row], url: imageUrl)
         
         return cell
     }
     
     // 画像を取得
-    func getPixabayImages() {
+//    func getImage(cellLabel: String) -> String {
+//
+//        return imageUrl
+//    }
+}
+
+extension Question2ViewController: UITableViewDelegate {
+    // セルタップしたときの処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: areaTexts[indexPath.row], message: "alert", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_ action: UIAlertAction!) -> Void in
+            print("ok")
+        }))
+        
+        // Alertを表示
+        present(alert, animated: true, completion: nil)
     }
 }

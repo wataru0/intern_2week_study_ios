@@ -16,41 +16,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
+                                <rect key="frame" x="87" y="240" width="240" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
+                                <rect key="frame" x="87" y="311" width="240" height="30"/>
+                                <state key="normal" title="add"/>
+                                <connections>
+                                    <action selector="pushAddButton" destination="HOv-YH-dfQ" eventType="touchUpInside" id="Raf-IQ-hNO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5H-y3-eST">
+                                <rect key="frame" x="190" y="346" width="34" height="30"/>
+                                <state key="normal" title="clear"/>
+                                <connections>
+                                    <action selector="pushClearTextButton" destination="HOv-YH-dfQ" eventType="touchUpInside" id="a7k-Xc-Yn1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="warning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vn-83-o19">
+                                <rect key="frame" x="87" y="282" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-2B-V7f">
                                 <rect key="frame" x="87" y="384" width="240" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="3cK-wX-M8f"/>
-                                    <constraint firstAttribute="width" constant="240" id="uho-Ff-ZhJ"/>
+                                    <constraint firstAttribute="height" constant="128" id="KxN-8v-KXK"/>
+                                    <constraint firstAttribute="width" constant="240" id="VgD-cn-y5j"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAC-3D-GIS">
-                                <rect key="frame" x="87" y="240" width="240" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="5AL-sw-TZo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
-                                <rect key="frame" x="87" y="314" width="240" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="0PX-k5-h7v"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="h1I-2B-V7f" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="5CN-E1-JLh"/>
-                            <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="40" id="7sh-Zw-yFY"/>
-                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="SAC-3D-GIS" secondAttribute="bottom" constant="40" id="9S7-3c-cYn"/>
-                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="a4S-bN-by9"/>
-                            <constraint firstItem="SAC-3D-GIS" firstAttribute="centerX" secondItem="AJf-tg-maZ" secondAttribute="centerX" id="l5m-Al-GqV"/>
-                            <constraint firstItem="h1I-2B-V7f" firstAttribute="centerY" secondItem="AJf-tg-maZ" secondAttribute="centerY" id="qxP-vA-nDO"/>
+                            <constraint firstItem="SAC-3D-GIS" firstAttribute="trailing" secondItem="mcD-4C-Lu1" secondAttribute="trailing" id="0YW-tB-CGe"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="centerX" secondItem="o5H-y3-eST" secondAttribute="centerX" id="0xo-t3-k34"/>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="o5H-y3-eST" secondAttribute="bottom" constant="8" id="1bb-5H-yg6"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="trailing" secondItem="h1I-2B-V7f" secondAttribute="trailing" id="329-IL-uws"/>
+                            <constraint firstItem="1vn-83-o19" firstAttribute="centerX" secondItem="mcD-4C-Lu1" secondAttribute="centerX" id="8we-IQ-jow"/>
+                            <constraint firstItem="o5H-y3-eST" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="5" id="JgD-QI-4B1"/>
+                            <constraint firstItem="o5H-y3-eST" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="5" id="Nfm-cd-Jb3"/>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="o5H-y3-eST" secondAttribute="bottom" constant="8" id="O7Q-MN-9c9"/>
+                            <constraint firstItem="SAC-3D-GIS" firstAttribute="top" secondItem="tUl-ih-lXm" secondAttribute="top" constant="196" id="Qeb-Vw-RMn"/>
+                            <constraint firstItem="o5H-y3-eST" firstAttribute="top" secondItem="mcD-4C-Lu1" secondAttribute="bottom" constant="5" id="Qsf-Uv-qpH"/>
+                            <constraint firstItem="SAC-3D-GIS" firstAttribute="leading" secondItem="tUl-ih-lXm" secondAttribute="leading" constant="87" id="XVK-Nx-6NM"/>
+                            <constraint firstItem="SAC-3D-GIS" firstAttribute="leading" secondItem="mcD-4C-Lu1" secondAttribute="leading" id="anG-3j-H9Y"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="SAC-3D-GIS" secondAttribute="bottom" constant="37" id="ePx-tn-5mI"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="leading" secondItem="h1I-2B-V7f" secondAttribute="leading" id="fTv-nb-kCS"/>
+                            <constraint firstItem="h1I-2B-V7f" firstAttribute="top" secondItem="o5H-y3-eST" secondAttribute="bottom" constant="8" id="fUf-p0-oEG"/>
+                            <constraint firstItem="1vn-83-o19" firstAttribute="leading" secondItem="tUl-ih-lXm" secondAttribute="leading" constant="87" id="iVq-Xw-kMk"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="SAC-3D-GIS" secondAttribute="bottom" constant="37" id="kP2-zO-smc"/>
+                            <constraint firstItem="mcD-4C-Lu1" firstAttribute="top" secondItem="1vn-83-o19" secondAttribute="bottom" constant="8" id="vVd-MM-MXp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tUl-ih-lXm"/>
                     </view>
@@ -58,11 +80,12 @@
                         <outlet property="addTextButton" destination="mcD-4C-Lu1" id="mCX-sP-Nbt"/>
                         <outlet property="textField" destination="SAC-3D-GIS" id="kBt-tg-yHt"/>
                         <outlet property="textView" destination="h1I-2B-V7f" id="dkf-fw-Acv"/>
+                        <outlet property="warningLabel" destination="1vn-83-o19" id="do1-pO-xH4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhm-ii-iwx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="66"/>
+            <point key="canvasLocation" x="-314.49275362318843" y="65.625"/>
         </scene>
     </scenes>
 </document>

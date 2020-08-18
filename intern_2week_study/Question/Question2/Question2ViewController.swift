@@ -27,13 +27,22 @@ extension Question2ViewController: UITableViewDataSource {
     
     // セルの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //Cellの作成
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "question2Cell") as? Question2Cell else {
+        // Cellの作成,R.swiftを使うと簡単になる
+//        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "question2Cell") as? Question2Cell else {
+//            return Question2Cell()
+//        }
+        
+        // R.swiftを使ったCellの作成
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.question2Cell, for: indexPath) else {
             return Question2Cell()
         }
         
         let imageUrl: String = "https://j-town.net/images/2017/quote-all/town20170314163320.jpg"
-        cell.setCell(cellLabel: areaTexts[indexPath.row], url: imageUrl)
+        // String -> URL
+        guard let imageURL = URL(string: imageUrl) else {
+            return Question2Cell()
+        }
+        cell.setArea(areaTexts[indexPath.row], withImageURL: imageURL)
         
         return cell
     }
@@ -44,8 +53,7 @@ extension Question2ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: areaTexts[indexPath.row], message: "alert!!", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_ action: UIAlertAction!) -> Void in
-        }))
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
         
         // Alertを表示
         present(alert, animated: true)

@@ -23,14 +23,14 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcD-4C-Lu1">
                                 <rect key="frame" x="87" y="311" width="240" height="30"/>
-                                <state key="normal" title="addButton"/>
+                                <state key="normal" title="add"/>
                                 <connections>
-                                    <action selector="pushButton" destination="HOv-YH-dfQ" eventType="touchUpInside" id="ocE-f9-n5I"/>
+                                    <action selector="pushAddButton" destination="HOv-YH-dfQ" eventType="touchUpInside" id="Raf-IQ-hNO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5H-y3-eST">
-                                <rect key="frame" x="153" y="346" width="108" height="30"/>
-                                <state key="normal" title="clearTextButton"/>
+                                <rect key="frame" x="190" y="346" width="34" height="30"/>
+                                <state key="normal" title="clear"/>
                                 <connections>
                                     <action selector="pushClearTextButton" destination="HOv-YH-dfQ" eventType="touchUpInside" id="a7k-Xc-Yn1"/>
                                 </connections>

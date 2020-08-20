@@ -11,6 +11,7 @@ final class SampleSearchViewContorller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     private func searchArticles() {

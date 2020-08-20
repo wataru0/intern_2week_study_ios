@@ -16,9 +16,7 @@ class ArticleListViewController: UIViewController {
     private var articles: [Article] = []
     
     override func viewDidLoad() {
-//        super.viewDidLoad()
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        super.viewDidLoad()
         tableView.register(R.nib.articleListCell)
     }
     
@@ -55,11 +53,14 @@ extension ArticleListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // 記事URL取得
         guard let urlString = articles[safe: indexPath.row]?.url, let url = URL(string: urlString) else {
             return
         }
-        
+        // safariViewController遷移
         let safariViewController = SFSafariViewController(url: url)
+        
+        // safariビューに遷移
         present(safariViewController, animated: true)
     }
 }

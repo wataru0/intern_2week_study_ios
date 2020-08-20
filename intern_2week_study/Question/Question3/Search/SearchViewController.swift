@@ -14,6 +14,8 @@ final class SearchViewController: UIViewController {
         
         // プレースホルダーの設定
         textField.placeholder = "キーワードを入力して検索"
+        
+        textField.delegate = self
     }
     
     func searchArticles() {
@@ -44,5 +46,16 @@ final class SearchViewController: UIViewController {
         let articleListViewController = ArticleListViewController.makeInstance(articles)
         // 遷移
         navigationController?.pushViewController(articleListViewController, animated: true)
+    }
+}
+
+// returnキーで検索
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // キーボードを閉じる
+        textField.resignFirstResponder()
+        // 検索
+        searchArticles()
+        return true
     }
 }

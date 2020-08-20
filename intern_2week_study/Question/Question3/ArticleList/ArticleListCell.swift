@@ -1,10 +1,3 @@
-//
-//  ArticleListCell.swift
-//  intern_2week_study
-//
-//  Created by 岡本航昇 on 2020/08/18.
-//  Copyright © 2020 caraquri. All rights reserved.
-//
 import Nuke
 import UIKit
 

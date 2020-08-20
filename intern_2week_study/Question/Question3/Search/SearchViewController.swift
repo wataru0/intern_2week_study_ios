@@ -11,6 +11,9 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // プレースホルダーの設定
+        textField.placeholder = "キーワードを入力して検索"
     }
     
     func searchArticles() {
@@ -18,6 +21,8 @@ final class SearchViewController: UIViewController {
         guard let text = textField.text, !text.isEmpty else {
             return
         }
+        // ボタン無効
+        searchButton.isEnabled = false
         
         APIClient.fetchArticles(keyword: text) { [weak self] result in
             DispatchQueue.main.sync {
@@ -32,8 +37,6 @@ final class SearchViewController: UIViewController {
                 self?.searchButton.isEnabled = true
             }
         }
-        
-        //showArticleListScrenn()
     }
     
     func showArticleListScreen(_ articles: [Article]) {

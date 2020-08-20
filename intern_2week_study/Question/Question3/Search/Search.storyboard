@@ -16,26 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTl-8r-TDb" userLabel="SearchButton">
-                                <rect key="frame" x="191.5" y="433" width="31" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTL-4c-mxT">
+                                <rect key="frame" x="79" y="333" width="257" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTl-8r-TDb" userLabel="SearchButton">
+                                <rect key="frame" x="174" y="433" width="66" height="30"/>
                                 <state key="normal" title="検索"/>
                                 <connections>
                                     <action selector="pushSearchButton" destination="hE7-Bk-rHS" eventType="touchUpInside" id="waH-XW-yAn"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTL-4c-mxT">
-                                <rect key="frame" x="101" y="342" width="213" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="FTL-4c-mxT" firstAttribute="top" secondItem="EnP-FA-CAh" secondAttribute="top" constant="298" id="Dkh-Cy-NLk"/>
-                            <constraint firstItem="FTL-4c-mxT" firstAttribute="centerX" secondItem="mTl-8r-TDb" secondAttribute="centerX" id="SxO-VQ-nKu"/>
-                            <constraint firstItem="mTl-8r-TDb" firstAttribute="centerY" secondItem="xlp-gX-m4Q" secondAttribute="centerY" id="XLJ-AI-iCz"/>
-                            <constraint firstItem="FTL-4c-mxT" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="101" id="uhV-Kc-Eyu"/>
-                            <constraint firstItem="FTL-4c-mxT" firstAttribute="centerX" secondItem="xlp-gX-m4Q" secondAttribute="centerX" id="zQE-HG-o8V"/>
+                            <constraint firstItem="FTL-4c-mxT" firstAttribute="top" secondItem="EnP-FA-CAh" secondAttribute="top" constant="289" id="9xY-Op-RPJ"/>
+                            <constraint firstItem="FTL-4c-mxT" firstAttribute="centerX" secondItem="xlp-gX-m4Q" secondAttribute="centerX" id="Sxk-eS-Z42"/>
+                            <constraint firstItem="FTL-4c-mxT" firstAttribute="centerX" secondItem="mTl-8r-TDb" secondAttribute="centerX" id="Vhf-wS-jkY"/>
+                            <constraint firstItem="mTl-8r-TDb" firstAttribute="top" secondItem="FTL-4c-mxT" secondAttribute="bottom" constant="66" id="aVd-UB-ZGn"/>
+                            <constraint firstItem="FTL-4c-mxT" firstAttribute="leading" secondItem="EnP-FA-CAh" secondAttribute="leading" constant="79" id="hpv-lI-wjG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EnP-FA-CAh"/>
                     </view>

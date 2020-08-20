@@ -16,16 +16,15 @@ class ArticleListCell: UITableViewCell {
     
     func set(_ article: Article) {
         articleTitleTextLabel.text = article.title
-        articleTitleTextLabel.backgroundColor = .green
         
         lgtmTextLabel.text = "LGTM : " + String(article.likesCount)
-        lgtmTextLabel.backgroundColor = .gray
-        
-        let imageUrl: String = "https://j-town.net/images/2017/quote-all/town20170314163320.jpg"
+
+        // articleからアイコン情報(String)を取得
         // String -> URL
-        guard let url = URL(string: imageUrl) else {
+        guard let iconImageUrl = article.user?.profileImageUrl, let url = URL(string: iconImageUrl) else {
             return
         }
+        
         // Nukeで画像読み込み
         Nuke.loadImage(with: url, into: userIconImageView)
     }
